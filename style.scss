@@ -164,19 +164,19 @@ a {
 
 /* Sets the actual background images to adorable kitties. This part is crucial. */
 .bg1::after {
-  background-image: url('https://placekitten.com/g/900/700');
+  background-image: url('assets/images/cover-allprettiedup.png');
   background-size: cover;
   background-repeat: none;
 }
 
 .bg2::after {
-  background-image: url('https://placekitten.com/g/800/600');
+  background-image: url('assets/images/cover-alibi.png');
   background-size: cover;
   background-repeat: none;
 }
 
 .bg3::after {
-  background-image: url('https://placekitten.com/g/800/500');
+  background-image: url('assets/images/cover-thescene.png');
   background-size: cover;
   background-repeat: none;
 }
