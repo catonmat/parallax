@@ -1,9 +1,10 @@
-@media(max-width: 600px) {
-  body {
-    background-color: blue;
+@function calculateREM($size, $unit: "px") {
+  @if($unit == "px"){
+    $rem-base: 16;
+    $remSize: $size / $rem-base;
+    @return #{$remSize}rem;
   }
 }
-
 // Mixins: Dimensions, padding, margin & positioning
 @mixin dimensions($width, $height, $unit) {
   @if($unit == "px") {
@@ -54,10 +55,17 @@
   align-items: center;
 }
 
-//Body
+//Global
+$small-viewport: 800px;
 
 //Navbar Container
+$navbar-font-color: white;
 $navbar-height: 5vh;
+$navbar-width: 100vw;
+$navbar-ul-font-weight: 900;
+$navbar-font-size: calculateREM(20, "px");
+$navbar-li-text-shadow: calculateREM(0.5, "px") calculateREM(0.5, "px") rgba(255,255,255,0.1);
+$sm-nav-bar-font-size: calculateREM(14, "px");;
 
 //Parallax
 $parallax-wrapper-height: 100vh;
@@ -65,24 +73,53 @@ $parallax-wrapper-height: 100vh;
 body {
   padding: 0;
   margin: 0;
+  font-family:'Playfair Display', serif;
+}
+
+a {
+  color: $navbar-font-color;
+  text-decoration: none;
+  &:visited {
+    color: $navbar-font-color;
+  }
 }
 
 .navbar-container {
-  border: 1px solid black;
-  width: 100vw;
+  @media(max-width: $small-viewport) {
+    font-size: $sm-nav-bar-font-size
+  }
+  width: $navbar-width;
+  height: $navbar-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $navbar-font-color;
+  font-size: $navbar-font-size;
   position: fixed;
   top: 0;
   z-index: 5;
-  display: flex;
-  justify-content: space-between;
-  height: $navbar-height;
-  .logo {
-    color: red;
+  .title {
+    @include margin(0, 0, 0, 10, "px");
+  }
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    li {
+      @include margin(0, 10, 0, 40, "px");
+      &:hover {
+        font-weight: $navbar-ul-font-weight;
+        text-shadow: $navbar-li-text-shadow
+      }
+      @media(max-width: $small-viewport) {
+        @include margin(0, 15, 0, 0, "px");
+      }
+    }
   }
 }
 
 .parallax-wrapper {
-  border: 1px solid blue;
   /* The height needs to be set to a fixed value for the effect to work.*/
   height: $parallax-wrapper-height;
   /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
@@ -94,7 +131,6 @@ body {
 }
 
 .section {
-  border: 1px solid red;
   /* Needed for children to be absolutely positioned relative to the parent. */
   position: relative;
   /* The height of the container. Must be set, but it doesn't really matter what the value is. */
@@ -111,6 +147,7 @@ body {
   /* Display and position the pseudo-element */
   content: " ";
   position: absolute;
+  height: 100%;
   top: 0;
   right: 0;
   bottom: 0;
@@ -128,14 +165,31 @@ body {
 /* Sets the actual background images to adorable kitties. This part is crucial. */
 .bg1::after {
   background-image: url('https://placekitten.com/g/900/700');
+  background-size: cover;
+  background-repeat: none;
 }
 
 .bg2::after {
   background-image: url('https://placekitten.com/g/800/600');
+  background-size: cover;
+  background-repeat: none;
+}
+
+.bg3::after {
+  background-image: url('https://placekitten.com/g/800/500');
+  background-size: cover;
+  background-repeat: none;
 }
 
 /* The styling for the static div. */
 .static {
-  background: red;
+  background: black;
+  height: 65vh;
+  opacity: 0.5;
+}
+
+.contact-section {
+  background: black;
+  height: 100vh;
 }
 

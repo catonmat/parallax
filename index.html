@@ -2,26 +2,51 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="navbar-container">
-      <div class="logo">RED</div>
+      <span class="title">
+        Ana Jovmir
+      </span>
       <ul>
-        <li>All Prettied Up</li>
-        <li>Alibi</li>
-        <li>The Scene</li>
+        <li><a href="#all-prettied-up">All Prettied Up</a></li>
+        <li><a href="#alibi">Alibi</a></li>
+        <li><a href="#the-scene">The Scene</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <main class="parallax-wrapper">
-      <section class="section parallax bg1">
-        <h1>Such Adorableness</h1>
+      <section id="all-prettied-up" class="section parallax bg1">
+        <h1></h1>
       </section>
       <section class="section static">
-        <h1>Boring</h1>
+        <h1>COLLAGE & BRANDS YOU'VE WORKED FOR IN THE PAST</h1>
       </section>
-      <section class="section parallax bg2">
-        <h1>SO FWUFFY AWWWSSS</h1>
+      <section id="alibi" class="section parallax bg2">
+        <h1></h1>
+      </section>
+      <section class="section static">
+        <h1>INSTAGRAM FEED</h1>
+      </section>
+      <section id="the-scene" class="section parallax bg3">
+        <h1></h1>
+      </section>
+      <section id="contact" class="section bg2 contact-section">
+        <h1>BIO, CONTACT DETAILS & CONTACT FORM</h1>
       </section>
     </main>
   </body>
+  <script>
+    $('a[href^=#]').on("click",function(e){
+    var t= $(this.hash);
+    var t=t.length&&t||$('[name='+this.hash.slice(1)+']');
+    if(t.length){
+        var tOffset=t.offset().top;
+        $('html,body').animate({scrollTop:tOffset-20},'slow');
+        e.preventDefault();
+      }
+    });​
+  </script>
 </html>
