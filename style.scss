@@ -1,90 +1,12 @@
-@media(max-width: 600px) {
-  body {
-    background-color: blue;
-  }
-}
-
-// Mixins: Dimensions, padding, margin & positioning
-@mixin dimensions($width, $height, $unit) {
-  @if($unit == "px") {
-    width: if($width == "auto", auto, calculateREM($width));
-    height: if($height == "auto", auto, calculateREM($height));
-  } @else {
-    width: if($width == "auto", auto, #{$width+$unit});
-    height: if($height == "auto", auto, #{$height+$unit});
-  }
-}
-@mixin padding($top, $right, $bottom, $left, $unit) {
-  @if($unit == "px") {
-    padding-top: calculateREM($top);
-    padding-right: calculateREM($right);
-    padding-bottom: calculateREM($bottom);
-    padding-left: calculateREM($left);
-  } @else {
-    padding: $top $right $bottom $left;
-  }
-}
-@mixin margin($top, $right, $bottom, $left, $unit) {
-  @if($unit == "px") {
-    margin-top: calculateREM($top);
-    margin-right: calculateREM($right);
-    margin-bottom: calculateREM($bottom);
-    margin-left: calculateREM($left);
-  } @else {
-    margin: $top $right $bottom $left;
-  }
-}
-@mixin position($top, $right, $bottom, $left, $unit) {
-  @if($unit == "px") {
-    top: if($top == "auto", auto, calculateREM($top));
-    right: if($right == "auto", auto, calculateREM($top));
-    bottom: if($bottom == "auto", auto, calculateREM($top));
-    left: if($left == "auto", auto, calculateREM($top));
-  } @else {
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
-  }
-}
-@mixin flexbox($flex-direction: row, $justify-content: center) {
-  display: flex;
-  justify-content: $justify-content;
-  flex-direction: $flex-direction;
-  align-items: center;
-}
-
-//Body
-
-//Navbar Container
-$navbar-height: 5vh;
-
-//Parallax
-$parallax-wrapper-height: 100vh;
-
 body {
   padding: 0;
   margin: 0;
 }
 
-.navbar-container {
-  border: 1px solid black;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  z-index: 5;
-  display: flex;
-  justify-content: space-between;
-  height: $navbar-height;
-  .logo {
-    color: red;
-  }
-}
-
 .parallax-wrapper {
   border: 1px solid blue;
   /* The height needs to be set to a fixed value for the effect to work.*/
-  height: $parallax-wrapper-height;
+  height: 100vh;
   /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
   overflow-x: hidden;
   /* Enable scrolling on the page. */

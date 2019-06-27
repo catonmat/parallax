@@ -1,21 +1,6 @@
-@media (max-width: 600px) {
-  body {
-    background-color: blue; } }
 body {
   padding: 0;
   margin: 0; }
-
-.navbar-container {
-  border: 1px solid black;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  z-index: 5;
-  display: flex;
-  justify-content: space-between;
-  height: 5vh; }
-  .navbar-container .logo {
-    color: red; }
 
 .parallax-wrapper {
   border: 1px solid blue;
