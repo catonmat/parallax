@@ -9,6 +9,12 @@ a {
   a:visited {
     color: white; }
 
+.footer i {
+  font-size: 30px;
+  margin: 5px; }
+  .footer i:hover {
+    font-weight: 900; }
+
 .navbar-container {
   width: 100vw;
   height: 5vh;

@@ -84,6 +84,16 @@ a {
   }
 }
 
+.footer {
+  i {
+    font-size: 30px;
+    margin: 5px;
+    &:hover{
+      font-weight: 900;
+    }
+  }
+}
+
 .navbar-container {
   @media(max-width: $small-viewport) {
     font-size: $sm-nav-bar-font-size
