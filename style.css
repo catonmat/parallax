@@ -27,7 +27,7 @@ a {
     margin-top: 0rem;
     margin-right: 0rem;
     margin-bottom: 0rem;
-    margin-left: 0.625rem; }
+    margin-left: 1.25rem; }
   .navbar-container ul {
     display: flex;
     justify-content: space-evenly;
@@ -35,7 +35,7 @@ a {
     list-style-type: none; }
     .navbar-container ul li {
       margin-top: 0rem;
-      margin-right: 0.625rem;
+      margin-right: 1.25rem;
       margin-bottom: 0rem;
       margin-left: 2.5rem; }
       .navbar-container ul li:hover {
@@ -67,6 +67,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   color: white;
   text-shadow: 0 0 5px #000; }
 
@@ -113,5 +114,21 @@ a {
 .contact-section {
   background: black;
   height: 100vh; }
+
+.lightbox {
+  width: 100vw;
+  height: 25vw;
+  z-index: 10;
+  display: flex;
+  flex-wrap: none;
+  flex-direction: row;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 10; }
+  .lightbox img {
+    margin: 10px;
+    max-width: 500px;
+    max-height: 500px;
+    object-fit: cover; }
 
 /*# sourceMappingURL=style.css.map */

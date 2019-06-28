@@ -99,7 +99,7 @@ a {
   top: 0;
   z-index: 5;
   .title {
-    @include margin(0, 0, 0, 10, "px");
+    @include margin(0, 0, 0, 20, "px");
   }
   ul {
     display: flex;
@@ -107,7 +107,7 @@ a {
     align-items: center;
     list-style-type: none;
     li {
-      @include margin(0, 10, 0, 40, "px");
+      @include margin(0, 20, 0, 40, "px");
       &:hover {
         font-weight: $navbar-ul-font-weight;
         text-shadow: $navbar-li-text-shadow
@@ -139,6 +139,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   color: white;
   text-shadow: 0 0 5px #000;
 }
@@ -191,5 +192,24 @@ a {
 .contact-section {
   background: black;
   height: 100vh;
+}
+
+.lightbox {
+  width: 100vw;
+  height: 25vw;
+  z-index: 10;
+  display: flex;
+  flex-wrap: none;
+  flex-direction: row;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 10;
+
+  img {
+    margin: 10px;
+    max-width: 500px;
+    max-height: 500px;
+    object-fit: cover;
+  }
 }
 
